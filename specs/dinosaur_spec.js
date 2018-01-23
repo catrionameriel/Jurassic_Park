@@ -6,7 +6,7 @@ describe('Dinosaur', function() {
   let dinosaur;
 
   beforeEach(function(){
-    dinosaur = new Dinosaur()
+    dinosaur = new Dinosaur('Tyrannosaurus')
   })
 
   it('dinosaur has a type', function() {
