@@ -28,7 +28,7 @@ Park.prototype.getDinosaursByNumberOfChildren = function (numberToCheck) {
 Park.prototype.calculateDinosaurs = function (numberOfYears) {
   let numberOfDinosaurs = 0;
   for (let dinosaur of this.enclosure) {
-    numberOfDinosaurs += dinosaur.numberOfChildren + 1;
+    numberOfDinosaurs += ((dinosaur.numberOfChildren + 1) ** numberOfYears);
   }
   return numberOfDinosaurs;
 };
