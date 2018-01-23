@@ -6,12 +6,14 @@ describe('Park', function(){
 
   let park;
   let tyrannosaurus;
+  let tyrannosaurus2;
   let velociraptor;
   let velociraptor2;
 
   beforeEach(function() {
     park = new Park();
-    tyrannosaurus = new Dinosaur('Tyrannosaurus', 2);
+    tyrannosaurus = new Dinosaur('Tyrannosaurus', 3);
+    tyrannosaurus2 = new Dinosaur('Tyrannosaurus', 2);
     velociraptor = new Dinosaur('Velociraptor', 7);
     velociraptor2 = new Dinosaur('Velociraptor', 5);
   })
@@ -42,12 +44,16 @@ describe('Park', function(){
   })
 
   it('can get dinosaurs with offspring more than 2', function() {
-    park.addDinosaur(tyrannosaurus);
     park.addDinosaur(velociraptor);
-    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(tyrannosaurus2);
     park.addDinosaur(velociraptor2);
     assert.deepEqual(park.getDinosaursByNumberOfChildren(2), [velociraptor, velociraptor2]);
     assert.strictEqual(park.getDinosaursByNumberOfChildren(2).length, 2);
   })
+
+  it('should be able to calculate number of dinosaurs after 1 year starting with 1 dinosaur', function(){
+   park.addDinosaur(tyrannosaurus);
+   assert.strictEqual(park.calculateDinosaurs(1), 4);
+ });
 
 })
