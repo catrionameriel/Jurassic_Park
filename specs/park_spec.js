@@ -30,4 +30,13 @@ describe('Park', function(){
     assert.strictEqual(park.enclosure.length, 1);
   })
 
+  it ('can remove dinosaur of particular type', function() {
+    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(velociraptor);
+    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(velociraptor);
+    park.removeDinosaurByType('Velociraptor');
+    assert.strictEqual(park.enclosure.length, 2);
+  })
+
 })
