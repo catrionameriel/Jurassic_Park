@@ -15,4 +15,14 @@ Park.prototype.removeDinosaurByType = function (type) {
   }
 };
 
+Park.prototype.getDinosaursByNumberOfChildren = function (numberToCheck) {
+  let dinosaursToReturn = [];
+  for (let dinosaur of this.enclosure) {
+    if (dinosaur.numberOfChildren > numberToCheck) {
+      dinosaursToReturn.push(dinosaur);
+    }
+  }
+  return dinosaursToReturn;
+};
+
 module.exports = Park;

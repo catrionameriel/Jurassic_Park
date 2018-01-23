@@ -36,9 +36,18 @@ describe('Park', function(){
     park.addDinosaur(tyrannosaurus);
     park.addDinosaur(velociraptor);
     park.addDinosaur(tyrannosaurus);
-    park.addDinosaur(velociraptor);
+    park.addDinosaur(velociraptor2);
     park.removeDinosaurByType('Velociraptor');
     assert.strictEqual(park.enclosure.length, 2);
+  })
+
+  it('can get dinosaurs with offspring more than 2', function() {
+    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(velociraptor);
+    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(velociraptor2);
+    assert.deepEqual(park.getDinosaursByNumberOfChildren(2), [velociraptor, velociraptor2]);
+    assert.strictEqual(park.getDinosaursByNumberOfChildren(2).length, 2);
   })
 
 })
