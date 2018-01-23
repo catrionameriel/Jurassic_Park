@@ -7,11 +7,13 @@ describe('Park', function(){
   let park;
   let tyrannosaurus;
   let velociraptor;
+  let velociraptor2;
 
   beforeEach(function() {
     park = new Park();
     tyrannosaurus = new Dinosaur('Tyrannosaurus', 2);
     velociraptor = new Dinosaur('Velociraptor', 7);
+    velociraptor2 = new Dinosaur('Velociraptor', 5);
   })
 
   it('park starts with no dinosaurs', function() {
@@ -30,7 +32,7 @@ describe('Park', function(){
     assert.strictEqual(park.enclosure.length, 1);
   })
 
-  it ('can remove dinosaur of particular type', function() {
+  it ('can remove multiple dinosaurs of particular type', function() {
     park.addDinosaur(tyrannosaurus);
     park.addDinosaur(velociraptor);
     park.addDinosaur(tyrannosaurus);
