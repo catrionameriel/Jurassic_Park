@@ -9,6 +9,7 @@ describe('Park', function(){
   let tyrannosaurus2;
   let velociraptor;
   let velociraptor2;
+  let dilophosaurus;
 
   beforeEach(function() {
     park = new Park();
@@ -16,6 +17,7 @@ describe('Park', function(){
     tyrannosaurus2 = new Dinosaur('Tyrannosaurus', 2);
     velociraptor = new Dinosaur('Velociraptor', 7);
     velociraptor2 = new Dinosaur('Velociraptor', 5);
+    dilophosaurus = new Dinosaur('Dilophosaurus', 2);
   })
 
   it('park starts with no dinosaurs', function() {
@@ -60,5 +62,11 @@ describe('Park', function(){
      park.addDinosaur(tyrannosaurus);
      assert.strictEqual(park.calculateDinosaurs(2), 16);
    });
+
+  it('should be able to calculate number of dinosaur after year two starting with 2 dinosaurs', function(){
+    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(dilophosaurus);
+    assert.strictEqual(park.calculateDinosaurs(2), 25);
+  });
 
 })
