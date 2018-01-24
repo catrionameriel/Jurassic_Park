@@ -1,4 +1,4 @@
-# Jurassic Park homework brief
+# Jurassic Park brief
 
 John Hammond wants to be able to manage the dinosaurs at Jurassic Park. (uhoh)
 
