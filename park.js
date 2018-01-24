@@ -14,6 +14,7 @@ Park.prototype.removeDinosaurByType = function (type) {
     }
   }
 };
+//don't remove while looping! push the one's you are keeping into a new array and then set the enclosure to that array.
 
 Park.prototype.getDinosaursByNumberOfChildren = function (numberToCheck) {
   let dinosaursToReturn = [];
